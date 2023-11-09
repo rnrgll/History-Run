@@ -6,6 +6,96 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
+    path: Assets/Scenes/Main/StartScene.unity
+    guid: ab4283d0df4ec44beae212eb06ed3288
+  - enabled: 1
+    path: Assets/Scenes/Main/AccountScene.unity
+    guid: 65fd7f0cdba2844d6920ba0f4ad18892
+  - enabled: 1
+    path: Assets/Scenes/Main/CollectionViewScene.unity
+    guid: cd2b2bb2c07f641559ad08627711a1e3
+  - enabled: 1
+    path: Assets/Scenes/BattleGame.unity
+    guid: 08a28a2be0d834dc5925bc317ff6dc62
+  - enabled: 1
+    path: Assets/Scenes/Epilogue.unity
+    guid: 472754e4de3f244d28fdfdc614cbb172
+  - enabled: 1
+    path: Assets/Scenes/EP_Battle.unity
+    guid: 9be2a97e29f454188be95ab371026a5d
+  - enabled: 1
+    path: Assets/Scenes/EP_Puzzle.unity
+    guid: a5668aeb9cc074a62958db7525edc659
+  - enabled: 1
+    path: Assets/Scenes/Mission1Scene.unity
+    guid: 43a501ed353fc4dcda80475f4b969663
+  - enabled: 1
+    path: Assets/Scenes/P2_OX.unity
+    guid: 844ee40f9c84e4cefb9ee7bbafe3c65f
+  - enabled: 1
+    path: Assets/Scenes/AvoidArrowGame.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Prologue1.unity
+    guid: 2aec3acd601fc4928a72e9d930edf206
+  - enabled: 1
+    path: Assets/Scenes/Prologue2.unity
+    guid: 5fdcb97093809487cbcd74cd894b5d7a
+  - enabled: 1
+    path: Assets/Scenes/Q1_Card.unity
+    guid: dbeb92e3def2d4c2fa4b789859edbe59
+  - enabled: 1
+    path: Assets/Scenes/EP_Arrow.unity
+    guid: 4339329bf102c4eaf8e28d018a1c12f6
+  - enabled: 1
+    path: Assets/Scenes/Q2_Castle.unity
+    guid: 09108a22ad0904243b6c5cb88c8031ae
+  - enabled: 1
+    path: Assets/Scenes/Q3_AB.unity
+    guid: 5ad4798b2f6794fd2a0e7a566446afff
+  - enabled: 1
+    path: Assets/Scenes/Q4_AB.unity
+    guid: 7b81120fedc1e42c2a1f5663f947d16f
+  - enabled: 1
+    path: Assets/Scenes/Q5_Input.unity
+    guid: 6308d9a327bf842498377d12b6207d89
+  - enabled: 1
+    path: Assets/Scenes/Q6_Affection.unity
+    guid: 8bd19b457ad734be9b8a15bf3a774ac1
+  - enabled: 1
+    path: Assets/Scenes/Q7_Input.unity
+    guid: 9dceaede56d1d480fa9a1ca8e958c399
+  - enabled: 1
+    path: Assets/Scenes/Quest1.unity
+    guid: 27173a9f296ae41d78deb9757500045c
+  - enabled: 1
+    path: Assets/Scenes/Quest2.unity
+    guid: 5da70f5f25d2748edb10c4a6a7e17237
+  - enabled: 1
+    path: Assets/Scenes/Quest3.unity
+    guid: 15b61cf3fbfd147f6b3fb8a5eb8644ed
+  - enabled: 1
+    path: Assets/Scenes/Quest4.unity
+    guid: 495bd65e7b4bb4f80aa2344035b7e5fa
+  - enabled: 1
+    path: Assets/Scenes/Quest5.unity
+    guid: 47ea0cda409284c14bce12df23f95feb
+  - enabled: 1
+    path: Assets/Scenes/Quest6.unity
+    guid: 330779e624def4462af5aa99bd47e590
+  - enabled: 1
+    path: Assets/Scenes/Quest7.unity
+    guid: f7f85b3dc09124d2386257de104ea062
+  - enabled: 1
+    path: Assets/Scenes/Main/MainMenuScene.unity
+    guid: 38a1ae8ac479548eb97bc3b812b274ee
+  - enabled: 1
+    path: Assets/Scenes/Main/StoryHome.unity
+    guid: f895a7ca6a8024300a2927236918486c
+  - enabled: 1
+    path: Assets/Scenes/SenarioHome.unity
+    guid: 074a8fef3ad544087b0f9638cfac5639
+  - enabled: 1
+    path: Assets/Scenes/Main/SignUp.unity
+    guid: 146a6b01bfff044289fd1c34399af87a
   m_configObjects: {}
