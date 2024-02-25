@@ -14,7 +14,7 @@ public class POP_Switch_Slide : MonoBehaviour
     [SerializeField] private GameObject Background_Pixel_Dimension;
     [SerializeField] private GameObject Toggle_Pixel_Dimension;
     [SerializeField] private float Offset_Pixel;
-    
+
 
 
     public bool textIsOn;
@@ -25,7 +25,7 @@ public class POP_Switch_Slide : MonoBehaviour
     private float BG_StartPosition;
     private float BG_Size;
     private float BG_Center;
-    
+
     Color currentcolor;
     Color newColor;
 
@@ -41,17 +41,17 @@ public class POP_Switch_Slide : MonoBehaviour
 
     private const float Mute = -80.0f;
     private const float On = 0.0f;
-    
+
     public AudioMixer audioMixer;
 
     public string exposedName;
-    
+
     // public AudioSource audioSource;
     // Start is called before the first frame update
     void Start()
     {
 
-        
+
 
         currentcolor = new Color(Handle_Image_Off.color.r, Handle_Image_Off.color.g, Handle_Image_Off.color.b, 1);
 
@@ -64,7 +64,7 @@ public class POP_Switch_Slide : MonoBehaviour
         Handle_Image_On.color = newColor2;
 
         isoff = GetVolume(audioMixer, exposedName);
-        
+
         Toggle_Size = Toggle_Pixel_Dimension.GetComponent<RectTransform>().rect.width; //Width of Toggle in pixels
 
         Toggle_Height = Toggle_Pixel_Dimension.GetComponent<RectTransform>().anchoredPosition.y;
@@ -86,7 +86,7 @@ public class POP_Switch_Slide : MonoBehaviour
         End_Point = new Vector2(BG_StartPosition, Toggle_Height);
 
         // Debug.Log(End_Point + "  " + Start_Point);
-        
+
         Init();
 
     }
@@ -103,7 +103,7 @@ public class POP_Switch_Slide : MonoBehaviour
         Debug.Log("not muted");
         return false;
     }
-    
+
     public void Init()
     {
         if (isoff)
@@ -111,7 +111,7 @@ public class POP_Switch_Slide : MonoBehaviour
             textIsOn = false;
             time = 0;
             StartCoroutine(SwitchCoroutineOff());
-            btn1.interactable = false; 
+            btn1.interactable = false;
         }
 
         else
@@ -125,7 +125,7 @@ public class POP_Switch_Slide : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-  
+
     }
 
 
@@ -137,11 +137,11 @@ public class POP_Switch_Slide : MonoBehaviour
 
 
 
-    
+
     //Base on the state of the switch we start a coroutine to handle the movement of the toggle handle
     public void Switching()
-    {         
-              
+    {
+
         if (isoff)
         {
             textIsOn = true;
@@ -149,9 +149,9 @@ public class POP_Switch_Slide : MonoBehaviour
             StartCoroutine(SwitchCoroutineOn());
             btn1.interactable = false;
             audioMixer.SetFloat(exposedName, On);
-            isoff = false;            
+            isoff = false;
         }
-        else  
+        else
         {
             textIsOn = false;
             time = 0;
@@ -165,44 +165,98 @@ public class POP_Switch_Slide : MonoBehaviour
 
     private IEnumerator SwitchCoroutineOn()
     {
-        while (time < 1f)
+
+        // while (time < 1f)
+        // {
+        //     time += 0.02f;
+
+        //     Toggle_Pixel_Dimension.GetComponent<RectTransform>().anchoredPosition = Vector2.Lerp(Start_Point, End_Point, time);
+
+        //     Handle_Image_Off.color = Color.Lerp(currentcolor, newColor, time);
+
+        //     Handle_Image_On.color = Color.Lerp(newColor2, currentcolor2, time);
+
+        //     if (Mathf.Round(Toggle_Pixel_Dimension.GetComponent<RectTransform>().anchoredPosition.x) == End_Point.x)
+        //     {
+        //         Execute1();
+        //         // Debug.Log("From on");
+        //         btn1.interactable = true;
+        //         StopCoroutine(SwitchCoroutineOn());
+        //     }
+        //     yield return null;           
+        // }
+
+        float duration = 0.1f;
+        float elapsedTime = 0f;
+
+        while (elapsedTime < duration)
         {
-            time += 0.02f;
+            elapsedTime += Time.deltaTime; // Use Time.deltaTime to make the animation frame-rate independent
 
-            Toggle_Pixel_Dimension.GetComponent<RectTransform>().anchoredPosition = Vector2.Lerp(Start_Point, End_Point, time);
+            float t = Mathf.Clamp01(elapsedTime / duration);
 
-            Handle_Image_Off.color = Color.Lerp(currentcolor, newColor, time);
+            Toggle_Pixel_Dimension.GetComponent<RectTransform>().anchoredPosition = Vector2.Lerp(Start_Point, End_Point, t);
 
-            Handle_Image_On.color = Color.Lerp(newColor2, currentcolor2, time);
+            Handle_Image_Off.color = Color.Lerp(currentcolor, newColor, t);
+
+            Handle_Image_On.color = Color.Lerp(newColor2, currentcolor2, t);
 
             if (Mathf.Round(Toggle_Pixel_Dimension.GetComponent<RectTransform>().anchoredPosition.x) == End_Point.x)
             {
                 Execute1();
-                // Debug.Log("From on");
                 btn1.interactable = true;
-                StopCoroutine(SwitchCoroutineOn());
+                // StopCoroutine(SwitchCoroutineOn());
+                yield break; // StopCoroutine is not needed here
             }
-            yield return null;           
+
+            yield return null;
+
         }
+
+
     }
 
     private IEnumerator SwitchCoroutineOff()
     {
-        while (time < 1f)
+        // while (time < 1f)
+        // {
+        //     time += 0.02f;
+
+        //     Toggle_Pixel_Dimension.GetComponent<RectTransform>().anchoredPosition = Vector2.Lerp(End_Point, Start_Point, time);
+
+        //     Handle_Image_Off.color = Color.Lerp(newColor, currentcolor, time);
+
+        //     Handle_Image_On.color = Color.Lerp(currentcolor2, newColor2, time);
+
+        //     if (Mathf.Round(Toggle_Pixel_Dimension.GetComponent<RectTransform>().anchoredPosition.x) == -End_Point.x)
+        //     {
+        //         btn1.interactable = true;
+        //         StopCoroutine(SwitchCoroutineOff());
+        //     }
+        //     yield return null;
+        // }
+
+        float duration = 0.1f; // Set the total duration of the animation
+        float elapsedTime = 0f;
+
+        while (elapsedTime < duration)
         {
-            time += 0.02f;
+            elapsedTime += Time.deltaTime; // Use Time.deltaTime to make the animation frame-rate independent
 
-            Toggle_Pixel_Dimension.GetComponent<RectTransform>().anchoredPosition = Vector2.Lerp(End_Point, Start_Point, time);
+            float t = Mathf.Clamp01(elapsedTime / duration);
 
-            Handle_Image_Off.color = Color.Lerp(newColor, currentcolor, time);
+            Toggle_Pixel_Dimension.GetComponent<RectTransform>().anchoredPosition = Vector2.Lerp(End_Point, Start_Point, t);
 
-            Handle_Image_On.color = Color.Lerp(currentcolor2, newColor2, time);
+            Handle_Image_Off.color = Color.Lerp(newColor, currentcolor, t);
+
+            Handle_Image_On.color = Color.Lerp(currentcolor2, newColor2, t);
 
             if (Mathf.Round(Toggle_Pixel_Dimension.GetComponent<RectTransform>().anchoredPosition.x) == -End_Point.x)
             {
                 btn1.interactable = true;
-                StopCoroutine(SwitchCoroutineOff());
+                yield break; // StopCoroutine is not needed here
             }
+
             yield return null;
         }
     }

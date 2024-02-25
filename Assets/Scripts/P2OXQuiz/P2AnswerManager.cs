@@ -10,20 +10,23 @@ public class P2AnswerManager : MonoBehaviour
     bool playerAnswer;
 
 
-    public void ClickO(){
+    public void ClickO()
+    {
         playerAnswer = true;
         CompareAnswer();
-        
+
     }
-    public void ClickX(){
+    public void ClickX()
+    {
         playerAnswer = false;
         CompareAnswer();
     }
 
-    public void CompareAnswer(){
-        if(playerAnswer==quizManager.Answer)
+    public void CompareAnswer()
+    {
+        if (playerAnswer == quizManager.Answer)
             quizManager.correct();
-            
+
         else
             quizManager.wrong();
     }
