@@ -11077,6 +11077,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 90249745}
     - target: {fileID: 8936660606970718747, guid: 45f8c44541e284e609159b5e94089d14, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8936660606970718747, guid: 45f8c44541e284e609159b5e94089d14, type: 3}
       propertyPath: Progressbar
       value: 
       objectReference: {fileID: 1688678773}

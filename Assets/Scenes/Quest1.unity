@@ -638,6 +638,10 @@ PrefabInstance:
       propertyPath: SelectorItemText
       value: 
       objectReference: {fileID: 147060254}
+    - target: {fileID: 4094011683184477043, guid: d536fa71dd00cf349a228e41212ace48, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4094011683184477044, guid: d536fa71dd00cf349a228e41212ace48, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1033,6 +1037,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 60436214408872649, guid: d536fa71dd00cf349a228e41212ace48, type: 3}
     - {fileID: 6977297545418313465, guid: d536fa71dd00cf349a228e41212ace48, type: 3}
+    - {fileID: 4094011683184477040, guid: d536fa71dd00cf349a228e41212ace48, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d536fa71dd00cf349a228e41212ace48, type: 3}
 --- !u!224 &147060252 stripped
 RectTransform:
@@ -1457,7 +1462,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &241110136
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1760,6 +1765,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8206358605457009699, guid: b1e781a67c6f97f4d9cfb50a61f30655, type: 3}
+      propertyPath: CallSE.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8206358605457009699, guid: b1e781a67c6f97f4d9cfb50a61f30655, type: 3}
+      propertyPath: ChatSE.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8206358605457009699, guid: b1e781a67c6f97f4d9cfb50a61f30655, type: 3}
+      propertyPath: CallSE.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: d892de2cb9eb07941bef7f5f4245c1b3, type: 3}
     - target: {fileID: 8206358605457009699, guid: b1e781a67c6f97f4d9cfb50a61f30655, type: 3}
       propertyPath: Emotion._sprite.Array.size
       value: 7
@@ -3276,7 +3293,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7577378141903801529}
+      - m_Target: {fileID: 1009435261630141536}
         m_TargetAssemblyTypeName: Sound, Assembly-CSharp
         m_MethodName: ClickButtonSound
         m_Mode: 1
@@ -3302,7 +3319,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogManager: {fileID: 1722610566}
   ImgPanel: {fileID: 1070037488}
-  sound: {fileID: 0}
+  sound: {fileID: 1423013989523978080}
 --- !u!114 &1408050732
 MonoBehaviour:
   m_ObjectHideFlags: 0
