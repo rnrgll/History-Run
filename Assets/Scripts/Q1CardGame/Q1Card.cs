@@ -15,8 +15,8 @@ public class Q1Card : MonoBehaviour
 
 
 	private void Start()
-	{ 
-		
+	{
+
 		select = false;
 	}
 	private void OnMouseDown()
@@ -27,9 +27,10 @@ public class Q1Card : MonoBehaviour
 			transform.GetChild(0).gameObject.SetActive(true);
 			select = true;
 			gm.SelectSlots[cardIndex] = true;
-						
+
 		}
-		else {
+		else
+		{
 			transform.GetChild(0).gameObject.SetActive(false);
 			select = false;
 			gm.SelectSlots[cardIndex] = false;
