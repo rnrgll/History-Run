@@ -47,6 +47,7 @@ public class Q7QuizManager : MonoBehaviour
     public GameObject AnswerPanel;
     public GameObject HintPanel;
     public GameObject MoreInfoPanel;
+    public GameObject GameUICanvas;
 
     //Score
     int score = 0;
@@ -118,6 +119,7 @@ public class Q7QuizManager : MonoBehaviour
     void gameOver()
     {
         bgm.Stop();
+        GameUICanvas.SetActive(false);
         // if(!PlayerPrefs.HasKey("Q7GamePlayCount"))
         // {
         //     PlayerPrefs.SetInt("Q7GamePlayCount", 1);

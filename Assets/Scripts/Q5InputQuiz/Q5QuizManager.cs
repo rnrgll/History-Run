@@ -49,6 +49,7 @@ public class Q5QuizManager : MonoBehaviour
     public GameObject AnswerPanel;
     public GameObject HintPanel;
     public GameObject MoreInfoPanel;
+    public GameObject GameUICanvas;
 
     //Score
     int score = 0;
@@ -66,7 +67,8 @@ public class Q5QuizManager : MonoBehaviour
 
 
 
-    private void Awake() {
+    private void Awake()
+    {
         playerTicket = PlayerPrefs.GetInt("TicketNum");
 
         FailPanel.SetActive(false);
@@ -76,12 +78,13 @@ public class Q5QuizManager : MonoBehaviour
         GamePanel.SetActive(false);
         MoreInfoPanel.SetActive(false);
 
-        if(PlayerPrefs.HasKey("Q5GamePlayCount"))
+        if (PlayerPrefs.HasKey("Q5GamePlayCount"))
         {
             PlayCount = PlayerPrefs.GetInt("Q5GamePlayCount");
-            tryNumText.text = (PlayCount+1).ToString() + "번째 시도";
+            tryNumText.text = (PlayCount + 1).ToString() + "번째 시도";
         }
-        else    {
+        else
+        {
             tryNumText.text = "1번째 시도";
             PlayCount = 0;
         }
@@ -94,8 +97,9 @@ public class Q5QuizManager : MonoBehaviour
 
 
     }
-    public void start() {
-        if(!PlayerPrefs.HasKey("Q5GamePlayCount"))
+    public void start()
+    {
+        if (!PlayerPrefs.HasKey("Q5GamePlayCount"))
         {
             PlayCount++;
             PlayerPrefs.SetInt("Q5GamePlayCount", PlayCount);
@@ -111,108 +115,124 @@ public class Q5QuizManager : MonoBehaviour
         Total.text = QnA.Count.ToString();
 
         generateQuestion();
-        if(AnswerPanel.activeSelf == true)
+        if (AnswerPanel.activeSelf == true)
             Debug.Log("start : 활성화");
         else
             Debug.Log("start : 비활성화");
 
     }
-    void gameOver(){
+    void gameOver()
+    {
         bgm.Stop();
         GamePanel.SetActive(false);
-        if(score >= pass){
+        GameUICanvas.SetActive(false);
+        if (score >= pass)
+        {
             Passbgm.Play();
             Pass.SetReult(PlayCount);
             Pass.SetScore(score);
             PassPanel.SetActive(true);
-            PlayerPrefs.SetString("Quest5PlayLog","GameClear");
+            PlayerPrefs.SetString("Quest5PlayLog", "GameClear");
         }
-        else{
+        else
+        {
             Failbgm.Play();
             Fail.SetReult(score);
             Fail.SetScore(score);
             FailPanel.SetActive(true);
         }
-        
+
 
     }
 
-    public void retry(){
+    public void retry()
+    {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
 
 
 
-    public void correct(){
+    public void correct()
+    {
         correectsound.Play();
-        score +=1;
+        score += 1;
         popUpSystem.popUp(true);
         QnA.RemoveAt(currentQuestion);
         //팝다운과 같이 다음 질문으로 이동하도록 한다.
-        Invoke("generateQuestion",2);
+        Invoke("generateQuestion", 2);
         //generateQuestion();
 
     }
-    public void wrong(){
+    public void wrong()
+    {
         wrongsound.Play();
         popUpSystem.popUp(false);
         Die();
-        if(life > 0){
+        if (life > 0)
+        {
             //뭘 적어야할까요?
         }
-        else{
+        else
+        {
             QnA.RemoveAt(currentQuestion);
             //팝다운과 같이 다음 질문으로 이동하도록  한다.
-            Invoke("generateQuestion",2);
+            Invoke("generateQuestion", 2);
             //generateQuestion();
         }
-        
+
 
 
     }
 
-    void SetAnswer(){
+    void SetAnswer()
+    {
         Answer = QnA[currentQuestion].Answer;
     }
     public void generateQuestion()
-    {   
-        
-        if(QnA.Count > 0){
-        current += 1;
-        Current.text = current.ToString();
-        currentQuestion = Random.Range(0, QnA.Count);
-        QuestionTxt.text = QnA[currentQuestion].Question;
-        currentQuestionNum = QnA[currentQuestion].QuestionNum;
+    {
 
-        HintManager.GetComponent<Q5HintManager>().generateHint(currentQuestionNum);
-        Debug.Log(currentQuestionNum);
-        SetAnswer();
-        SetLife();
+        if (QnA.Count > 0)
+        {
+            current += 1;
+            Current.text = current.ToString();
+            currentQuestion = Random.Range(0, QnA.Count);
+            QuestionTxt.text = QnA[currentQuestion].Question;
+            currentQuestionNum = QnA[currentQuestion].QuestionNum;
+
+            HintManager.GetComponent<Q5HintManager>().generateHint(currentQuestionNum);
+            Debug.Log(currentQuestionNum);
+            SetAnswer();
+            SetLife();
 
         }
-        else{
+        else
+        {
             Debug.Log("Out of range of questions");
             gameOver();
-  
+
         }
 
-        
+
     }
 
-    void SetLife(){
+    void SetLife()
+    {
         life = 2;
-        Life1.color = new Color(1,1,1);
-        Life2.color = new Color(1,1,1);
+        Life1.color = new Color(1, 1, 1);
+        Life2.color = new Color(1, 1, 1);
 
     }
-    void Die(){
+    void Die()
+    {
         life -= 1;
-        if(life==1){
-            Life1.color = new Color(0,0,0);
+        if (life == 1)
+        {
+            Life1.color = new Color(0, 0, 0);
         }
-        if(life==0){
-            Life2.color = new Color(0,0,0);
+        if (life == 0)
+        {
+            Life2.color = new Color(0, 0, 0);
         }
 
     }

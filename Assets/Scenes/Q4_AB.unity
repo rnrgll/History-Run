@@ -4659,6 +4659,7 @@ MonoBehaviour:
   AnswerPanel: {fileID: 158586935}
   HintPanel: {fileID: 1591016171}
   MoreInfoPanel: {fileID: 1439700658}
+  GameUICanvas: {fileID: 1941621930}
   pass: 3
   currentQuestionNum: 0
   correectsound: {fileID: 904139320}
