@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class P2QuizManager : MonoBehaviour
 {
-    
+
 
     public int PlayCount;
     /* 시도횟수 기능 삭제
@@ -60,6 +60,7 @@ public class P2QuizManager : MonoBehaviour
     public GameObject HintPanel;
     public GameObject MoreInfoPanel;
     public GameObject GuidePanel;
+    public GameObject GameUICanvas;
 
     //Score
     int score = 0;
@@ -84,7 +85,8 @@ public class P2QuizManager : MonoBehaviour
     public AudioSource Failbgm;
     public AudioSource bgm;
 
-    private void Awake() {
+    private void Awake()
+    {
         playerTicket = PlayerPrefs.GetInt("TicketNum");
 
         //초기 -> panel 활성화, 비활성화
@@ -106,9 +108,11 @@ public class P2QuizManager : MonoBehaviour
 
         //시도횟수 설정
     }
-    public void start() {
-        if(!PlayerPrefs.HasKey("P2GamePlayCount")){
-            PlayerPrefs.SetInt("P2GamePlayCount",1);
+    public void start()
+    {
+        if (!PlayerPrefs.HasKey("P2GamePlayCount"))
+        {
+            PlayerPrefs.SetInt("P2GamePlayCount", 1);
             GuidePanel.SetActive(true);
 
         }
@@ -116,18 +120,21 @@ public class P2QuizManager : MonoBehaviour
         {
             PlayCount = PlayerPrefs.GetInt("P2GamePlayCount");
             PlayCount++;
-            PlayerPrefs.SetInt("P2GamePlayCount",PlayCount);
-        } 
-        
+            PlayerPrefs.SetInt("P2GamePlayCount", PlayCount);
+        }
+
         //game panel 활성화
         GamePanel.SetActive(true);
         generateQuestion();
     }
-    void gameOver(){
+    void gameOver()
+    {
         bgm.Stop();
-        
+        GameUICanvas.SetActive(false);
+
         GamePanel.SetActive(false);
-        if(score >= pass){
+        if (score >= pass)
+        {
             //시도횟수 설정 + 활성화
             //tryNumTxt_Pass.text = tryNum.ToString()+ TryNumString;
             Passbgm.Play();
@@ -136,17 +143,19 @@ public class P2QuizManager : MonoBehaviour
             PassPanel.SetActive(true);
             PlayerPrefs.SetString("Prologue2PlayLog", "GameClear");
         }
-        else{
+        else
+        {
             Failbgm.Play();
             Fail.SetReultText(score);
             Fail.SetScore(score);
             FailPanel.SetActive(true);
         }
-        
+
 
     }
 
-    public void retry(){
+    public void retry()
+    {
         //tryNum +=1;
         //Debug.Log("시도횟수 : "+tryNum);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
@@ -155,18 +164,20 @@ public class P2QuizManager : MonoBehaviour
 
 
 
-    public void correct(){
+    public void correct()
+    {
 
         correectsound.Play();
-        score +=1;
+        score += 1;
         popUpSystem.popUp(true);
         QnA.RemoveAt(currentQuestion);
         //팝다운과 같이 다음 질문으로 이동하도록 한다.
-        Invoke("generateQuestion",2);
+        Invoke("generateQuestion", 2);
         //generateQuestion();
 
     }
-    public void wrong(){
+    public void wrong()
+    {
         wrongsound.Play();
         popUpSystem.popUp(false);
         //Die();
@@ -180,63 +191,66 @@ public class P2QuizManager : MonoBehaviour
             Invoke("generateQuestion",2);
             //generateQuestion();*/
         QnA.RemoveAt(currentQuestion);
-        Invoke("generateQuestion",2);
+        Invoke("generateQuestion", 2);
         //}
 
     }
 
     public void generateQuestion()
-    {   
-        
-        if(QnA.Count > 0){
-        current += 1;
-        Current.text = current.ToString();
-        currentQuestion = Random.Range(0, QnA.Count);
-        QuestionTxt.text = QnA[currentQuestion].Question;
-        
-        //hint
-        currentQuestionNum = QnA[currentQuestion].QuestionNum;
-        HintManager.GetComponent<P2HintManager>().generateHint(currentQuestionNum);
-        Debug.Log(currentQuestionNum);
-        
-        
-        
-        SetAnswer();
-        //SetLife();
+    {
+
+        if (QnA.Count > 0)
+        {
+            current += 1;
+            Current.text = current.ToString();
+            currentQuestion = Random.Range(0, QnA.Count);
+            QuestionTxt.text = QnA[currentQuestion].Question;
+
+            //hint
+            currentQuestionNum = QnA[currentQuestion].QuestionNum;
+            HintManager.GetComponent<P2HintManager>().generateHint(currentQuestionNum);
+            Debug.Log(currentQuestionNum);
+
+
+
+            SetAnswer();
+            //SetLife();
 
 
 
         }
-        else{
+        else
+        {
             Debug.Log("Out of range of questions");
             gameOver();
-  
+
         }
 
-        
+
     }
-    void SetAnswer(){
+    void SetAnswer()
+    {
         Answer = QnA[currentQuestion].True;
     }
 
-/* life 기능 삭제
-    void SetLife(){
-        life = 2;
-        Life1.color = new Color(1,1,1);
-        Life2.color = new Color(1,1,1);
+    /* life 기능 삭제
+        void SetLife(){
+            life = 2;
+            Life1.color = new Color(1,1,1);
+            Life2.color = new Color(1,1,1);
 
-    }
-*/
-/*
-    void Die(){
-        life -= 1;
-        if(life==1){
-            Life1.color = new Color(0,0,0);
         }
-        if(life==0){
-            Life2.color = new Color(0,0,0);
-        }
+    */
+    /*
+        void Die(){
+            life -= 1;
+            if(life==1){
+                Life1.color = new Color(0,0,0);
+            }
+            if(life==0){
+                Life2.color = new Color(0,0,0);
+            }
 
-    }*/
+        }*/
 
 }
