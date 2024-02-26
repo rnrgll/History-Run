@@ -14,17 +14,13 @@ public class StageClearBtnEvent : MonoBehaviour
     {
         // 버튼에 OnClick 이벤트 추가
         btn = GetComponent<Button>();
-        btn.onClick.AddListener(() =>
-        {
-            ChangeScene(sceneName);
-        });
+        btn.onClick.RemoveAllListeners();
+        btn.onClick.AddListener(ButtonClickEventHandler);
 
     }
 
-    // 씬 전환 함수
-    public void ChangeScene(string sceneName)
+    private void ButtonClickEventHandler()
     {
-        // 버튼 클릭 소리 재생
         if (buttonClickSound != null)
         {
             buttonClickSound.PlayOneShot(buttonClickSound.clip);
@@ -34,8 +30,13 @@ public class StageClearBtnEvent : MonoBehaviour
             Debug.Log("buttonClickSound is null");
         }
 
-        // 메인 씬으로 전환
+        Invoke("DelayedSceneChange", 0.5f);
+    }
+
+    private void DelayedSceneChange()
+    {
         SceneManager.LoadScene(sceneName);
     }
+
 
 }
