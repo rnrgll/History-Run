@@ -36,35 +36,42 @@ public class SceneChange : MonoBehaviour
         {
             case "P1":
                 //if(PlayerPrefs.GetString("Prologue1PlayLog").Equals("End"))
-
-                Prologue1();
+                Invoke("Prologue1", 0.5f);
                 break;
             case "P2":
-                Prologue2();
+                Invoke("Prologue2", 0.5f);
                 break;
             case "Q1":
-                Quest1();
+                Invoke("Quest1", 0.5f);
+
                 break;
             case "Q2":
-                Quest2();
+                Invoke("Quest2", 0.5f);
+
                 break;
             case "Q3":
-                Quest3();
+                Invoke("Quest3", 0.5f);
+
                 break;
             case "Q4":
-                Quest4();
+                Invoke("Quest4", 0.5f);
+
                 break;
             case "Q5":
-                Quest5();
+                Invoke("Quest5", 0.5f);
+
                 break;
             case "Q6":
-                Quest6();
+                Invoke("Quest6", 0.5f);
+
                 break;
             case "Q7":
-                Quest7();
+                Invoke("Quest7", 0.5f);
+
                 break;
             case "E":
-                Epilogue();
+                Invoke("Epilogue", 0.5f);
+
                 break;
         }
     }

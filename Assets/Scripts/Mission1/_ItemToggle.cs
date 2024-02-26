@@ -19,7 +19,7 @@ public class _ItemToggle : MonoBehaviour
     private Toggle toggle7;
 
     private int count;
-    
+
     public GameObject finalItem;
 
     bool GetItemStatus(String itemName)
@@ -45,8 +45,8 @@ public class _ItemToggle : MonoBehaviour
         toggle4 = GameObject.Find("Toggle (4)").GetComponent<Toggle>();
         toggle5 = GameObject.Find("Toggle (5)").GetComponent<Toggle>();
         toggle6 = GameObject.Find("Toggle (6)").GetComponent<Toggle>();
-        toggle7 = GameObject.Find("Toggle (7)").GetComponent<Toggle>(); 
-        
+        toggle7 = GameObject.Find("Toggle (7)").GetComponent<Toggle>();
+
         toggle1.isOn = GetItemStatus("평화의 날");
         toggle2.isOn = GetItemStatus("용기의 날");
         toggle3.isOn = GetItemStatus("지혜의 날");
@@ -54,17 +54,21 @@ public class _ItemToggle : MonoBehaviour
         toggle5.isOn = GetItemStatus("신뢰의 날");
         toggle6.isOn = GetItemStatus("희망의 날");
         toggle7.isOn = GetItemStatus("정의의 날");
-        
+
     }
 
     // Start is called before the first frame update
     void Start()
     {
         ItemInit();
-        
+
         if (GetItemStatus("칠지도"))
         {
-            finalItem.SetActive(true);
+            if (finalItem != null)
+            {
+                finalItem.SetActive(true);
+            }
+
         }
 
     }
@@ -72,6 +76,6 @@ public class _ItemToggle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }

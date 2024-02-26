@@ -9,6 +9,20 @@ public class ARR_ArrowGenerator : MonoBehaviour
     float delta = 0;
     public AudioSource sound;
 
+    [SerializeField]
+    private bool isGameStarted = false;
+    public bool IsGameStarted
+    {
+        set
+        {
+            isGameStarted = value;
+        }
+        get
+        {
+            return isGameStarted;
+        }
+    }
+
     void Update()
     {
         /* 이 부분에서 화살이 1개씩 생성되는 로직을 구현
@@ -22,16 +36,21 @@ public class ARR_ArrowGenerator : MonoBehaviour
          *    이렇게 생성된 GameObject를 Random(범위)를 통해 X축 좌표를 생성하여
          *    Vector3(x, y, z)로 만들어 위치하게 한다.
          */
-        delta += Time.deltaTime;
-        if (delta > span)
-        {
-     
-            GameObject go = Instantiate(ARR_ArrowPrefab) as GameObject;
-            sound.Play();
 
-            
-            go.transform.position = new Vector3(Random.Range(-7,7), 7, 0);
-            delta = 0;
+        if (isGameStarted)
+        {
+            delta += Time.deltaTime;
+            if (delta > span)
+            {
+
+                GameObject go = Instantiate(ARR_ArrowPrefab) as GameObject;
+                sound.Play();
+
+
+                go.transform.position = new Vector3(Random.Range(-7, 7), 7, 0);
+                delta = 0;
+            }
         }
+
     }
 }

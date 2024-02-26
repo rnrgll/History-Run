@@ -16,7 +16,8 @@ public class ShotPointFlip : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(isFilp()){
+        if (isFilp())
+        {
             Vector2 shotPointPos = new Vector2(-originalPos.x, originalPos.y);
             gameObject.transform.localPosition = shotPointPos;
         }
@@ -24,16 +25,17 @@ public class ShotPointFlip : MonoBehaviour
         {
             gameObject.transform.localPosition = originalPos;
         }
-            
+
     }
-     public bool isFilp(){
+    public bool isFilp()
+    {
         Player = GameObject.Find("Player");
-        if(Player.GetComponent<SpriteRenderer>().flipX)
+        if (Player.GetComponent<SpriteRenderer>().flipX)
             return true;
         else return false;
     }
 
-    
+
 
 
 

@@ -8,17 +8,21 @@ public class ARR_ArrowControl : MonoBehaviour
     GameObject hpControl;
     //public AudioSource attack;
 
+
     void Start()
     {
         // 게임 내의 오브젝트와 연결을 짓기 위한 부분! 꼭 필요하다
         player = GameObject.Find("ARR_Player");
-        hpControl=GameObject.Find("ARR_HpControl");
+        hpControl = GameObject.Find("ARR_HpControl");
     }
 
     void Update()
     {
         // 프레임마다 등속으로 하락시킨다.
-        transform.Translate(0, -0.5f, 0);
+
+
+
+        transform.Translate(0, -0.4f, 0);
 
         // 화면 밖으로 나오면 오브젝트를 소멸시킨다.
         if (transform.position.y < -5.0f) Destroy(gameObject);
@@ -34,15 +38,16 @@ public class ARR_ArrowControl : MonoBehaviour
         float r1 = 0.5f; // 화살의 반경
         float r2 = 1.0f; // player의 반경
 
-        if (d < r1 + r2) {
-            
+        if (d < r1 + r2)
+        {
+
             Destroy(gameObject);
             hpControl.GetComponent<ARR_HpControl>().HpDecrease();
-            
-            
+
+
         }
 
-        
+
 
     }
 }

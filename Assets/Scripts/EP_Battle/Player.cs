@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Player : MonoBehaviour {
+public class Player : MonoBehaviour
+{
 
     public int health;
     public int speed;
@@ -36,7 +37,6 @@ public class Player : MonoBehaviour {
 
     Vector2 moveInput;
 
-
     private void Start()
     {
         anim = GetComponent<Animator>();
@@ -45,9 +45,9 @@ public class Player : MonoBehaviour {
         spriteRendererLeftLeg = transform.Find("Leg Left").GetComponent<SpriteRenderer>();
         spriteRendererRightLeg = transform.Find("Leg Right").GetComponent<SpriteRenderer>();
         //Weapon = transform.Find("Weapon").game;
-        spriteRendererWeapon=Weapon.GetComponent<SpriteRenderer>();
+        spriteRendererWeapon = Weapon.GetComponent<SpriteRenderer>();
         target = Weapon.transform.GetChild(0).GetComponent<Transform>();
-        
+
     }
 
     private void Update()
@@ -67,28 +67,33 @@ public class Player : MonoBehaviour {
         //run
         if (moveInput != Vector2.zero)
         {
-            if(!jumping)
+            if (!jumping)
                 anim.SetBool("isRunning", true);
             else
-                anim.SetBool("isRunning",false);
-            if (moveInput.x == 0) {
-               return;
+                anim.SetBool("isRunning", false);
+            if (moveInput.x == 0)
+            {
+                return;
             }
-            else {
-                spriteRendererHead.flipX = moveInput.x==-1;
-                spriteRendererLeftLeg.flipX = moveInput.x==-1;
-                spriteRendererRightLeg.flipX = moveInput.x==-1;
-                spriteRendererWeapon.flipY = moveInput.x==-1;
-                if(moveInput.x==-1){
+            else
+            {
+                spriteRendererHead.flipX = moveInput.x == -1;
+                spriteRendererLeftLeg.flipX = moveInput.x == -1;
+                spriteRendererRightLeg.flipX = moveInput.x == -1;
+                spriteRendererWeapon.flipY = moveInput.x == -1;
+                if (moveInput.x == -1)
+                {
                     //target = Weapon.transform.GetChild(0).GetComponent<Transform>();
-                    target.position = new Vector3(Weapon.transform.position.x-4, target.position.y, target.position.z);
+                    target.position = new Vector3(Weapon.transform.position.x - 4, target.position.y, target.position.z);
                 }
-                else{
-                    target.position = new Vector3(Weapon.transform.position.x+4, target.position.y, target.position.z);
+                else
+                {
+                    target.position = new Vector3(Weapon.transform.position.x + 4, target.position.y, target.position.z);
                 }
-            }   
+            }
         }
-        else {
+        else
+        {
             anim.SetBool("isRunning", false);
         }
 
@@ -96,7 +101,8 @@ public class Player : MonoBehaviour {
         //healthBar updates
         healthBar.value = health;
 
-        if(health <= 0){
+        if (health <= 0)
+        {
             anim.SetTrigger("Death");
         }
 
@@ -110,47 +116,55 @@ public class Player : MonoBehaviour {
 
 
         //rayCast
-        if(rb.velocity.y < 0){
-            Debug.DrawRay(rb.position,Vector3.down*4, new Color(0,1,0));
-            RaycastHit2D rayHit = Physics2D.Raycast(rb.position, Vector3.down, 4,  LayerMask.GetMask("Ground"));
-            if(rayHit.collider != null){
+        if (rb.velocity.y < 0)
+        {
+            Debug.DrawRay(rb.position, Vector3.down * 4, new Color(0, 1, 0));
+            RaycastHit2D rayHit = Physics2D.Raycast(rb.position, Vector3.down, 4, LayerMask.GetMask("Ground"));
+            if (rayHit.collider != null)
+            {
                 Debug.Log("not null");
-                if(rayHit.distance < 3f){
+                if (rayHit.distance < 3f)
+                {
                     Debug.Log("바닥감지");
                     jumping = false;
-                    jumpClick=false;
+                    jumpClick = false;
                 }
             }
-        
+
         }
 
 
     }
 
-    void PlayerMove(){
-        if(Input.GetKey(KeyCode.RightArrow)||move==1)
+    void PlayerMove()
+    {
+        if (Input.GetKey(KeyCode.RightArrow) || move == 1)
         {
             //rb.AddForce(Vector2.right,ForceMode2D.Force);
-            transform.Translate(new Vector3(speed*Time.deltaTime,0,0));
+            transform.Translate(new Vector3(speed * Time.deltaTime, 0, 0));
             moveInput = new Vector2(1, 0);
         }
-        else if(Input.GetKey(KeyCode.LeftArrow)||move==-1){
+        else if (Input.GetKey(KeyCode.LeftArrow) || move == -1)
+        {
             //rb.AddForce(Vector2.left,ForceMode2D.Force);
-            transform.Translate(new Vector3(-speed*Time.deltaTime,0,0));
+            transform.Translate(new Vector3(-speed * Time.deltaTime, 0, 0));
             moveInput = new Vector2(-1, 0);
         }
-        else {
-            moveInput = new Vector2(0,0);
+        else
+        {
+            moveInput = new Vector2(0, 0);
         }
 
-        
+
 
     }
 
 
-    void Jump(){
+    void Jump()
+    {
 
-        if((Input.GetKey(KeyCode.UpArrow)||jumpClick)&&!jumping){
+        if ((Input.GetKey(KeyCode.UpArrow) || jumpClick) && !jumping)
+        {
             //rb.position = new Vector2(rb.position.x, rb.position.y+jumpPower);
             //rb.MovePosition(rb.position * Time.fixedDeltaTime);
             rb.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
@@ -159,33 +173,39 @@ public class Player : MonoBehaviour {
     }
 
 
-    public void onDamage(){
-            gameObject.layer = 8;
-            spriteRendererHead.color = new Color(1,1,1,0.4f);
-            spriteRendererWeapon.color = new Color(1,1,1,0.4f);
-            
-            Invoke("offDamage",1);
+    public void onDamage()
+    {
+        gameObject.layer = 8;
+        spriteRendererHead.color = new Color(1, 1, 1, 0.4f);
+        spriteRendererWeapon.color = new Color(1, 1, 1, 0.4f);
+
+        Invoke("offDamage", 1);
     }
 
-    public void offDamage(){
+    public void offDamage()
+    {
         gameObject.layer = 0;
-        spriteRendererHead.color = new Color(1,1,1,1);
-        spriteRendererWeapon.color = new Color(1,1,1,1);
+        spriteRendererHead.color = new Color(1, 1, 1, 1);
+        spriteRendererWeapon.color = new Color(1, 1, 1, 1);
     }
 
 
 
-    public void leftpush(){
+    public void leftpush()
+    {
         move = -1;
     }
-    public void rightpush(){
+    public void rightpush()
+    {
         move = 1;
     }
-    public void stop(){
+    public void stop()
+    {
         move = 0;
     }
-    public void jumppush(){
-        if(!jumpClick)
+    public void jumppush()
+    {
+        if (!jumpClick)
             jumpClick = true;
     }
 
