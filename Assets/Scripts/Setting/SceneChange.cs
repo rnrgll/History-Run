@@ -5,29 +5,35 @@ using UnityEngine.SceneManagement;
 
 public class SceneChange : MonoBehaviour
 {
-    public void ChangeToMainScene(){
+    public void ChangeToMainScene()
+    {
         SceneManager.LoadScene("MainMenuScene");
     }
 
-    public void ChangeToStartScene(){
+    public void ChangeToStartScene()
+    {
         SceneManager.LoadScene("StartScene");
     }
-    public void ChangeToAccountScene(){
+    public void ChangeToAccountScene()
+    {
         SceneManager.LoadScene("AccountScene");
     }
 
-    public void ChangeToCollectionScene(){
+    public void ChangeToCollectionScene()
+    {
         SceneManager.LoadScene("CollectionViewScene");
     }
 
-    public void ChangeToMission1(){
+    public void ChangeToMission1()
+    {
         SceneManager.LoadScene("Mission1Scene");
     }
 
     public void SenarioStart()
     {
         string SlotName = PlayerPrefs.GetString("SelectSlot");
-        switch(SlotName){
+        switch (SlotName)
+        {
             case "P1":
                 //if(PlayerPrefs.GetString("Prologue1PlayLog").Equals("End"))
 
@@ -106,10 +112,12 @@ public class SceneChange : MonoBehaviour
     {
         SceneManager.LoadScene("SenarioHome");
     }
-    public void SignUp(){
+    public void SignUp()
+    {
         SceneManager.LoadScene("SignUp");
     }
-    public void StoryHome(){
+    public void StoryHome()
+    {
         SceneManager.LoadScene("StoryHome");
     }
 
@@ -120,41 +128,53 @@ public class SceneChange : MonoBehaviour
     {
         SceneManager.LoadScene("P2_OX");
     }
-    public void Q1_Card(){
+    public void Q1_Card()
+    {
         SceneManager.LoadScene("Q1_Card");
     }
-    public void Q2_Castle(){
+    public void Q2_Castle()
+    {
         SceneManager.LoadScene("Q2_Castle");
     }
-    public void Q3_AB(){
+    public void Q3_AB()
+    {
         SceneManager.LoadScene("Q3_AB");
     }
-    public void Q4_AB(){
+    public void Q4_AB()
+    {
         SceneManager.LoadScene("Q4_AB");
     }
-    public void Q5_Input(){
+    public void Q5_Input()
+    {
         SceneManager.LoadScene("Q5_Input");
     }
-    public void Q6_Affection(){
+    public void Q6_Affection()
+    {
         SceneManager.LoadScene("Q6_Affection");
     }
-    public void Q7_Input(){
+    public void Q7_Input()
+    {
         SceneManager.LoadScene("Q7_Input");
     }
-    public void EP_Arrow(){
+    public void EP_Arrow()
+    {
         SceneManager.LoadScene("EP_Arrow");
     }
-    public void EP_Puzzle(){
+    public void EP_Puzzle()
+    {
         SceneManager.LoadScene("EP_Puzzle");
     }
-    public void EP_Battle(){
+    public void EP_Battle()
+    {
         SceneManager.LoadScene("EP_Battle");
     }
-    public void AvoidArrorGame(){
+    public void AvoidArrorGame()
+    {
         SceneManager.LoadScene("AvoidArrowGame");
     }
 
-    public void BattleGame(){
+    public void BattleGame()
+    {
         SceneManager.LoadScene("BattleGame");
     }
 
