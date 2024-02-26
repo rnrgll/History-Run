@@ -536,7 +536,7 @@ PrefabInstance:
     - target: {fileID: 1373032500550548512, guid: d536fa71dd00cf349a228e41212ace48, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 2085559947}
+      objectReference: {fileID: 0}
     - target: {fileID: 1373032500550548512, guid: d536fa71dd00cf349a228e41212ace48, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: ClickButtonSound
@@ -685,6 +685,14 @@ PrefabInstance:
       propertyPath: Delay
       value: 0.02
       objectReference: {fileID: 0}
+    - target: {fileID: 4094011683184477041, guid: d536fa71dd00cf349a228e41212ace48, type: 3}
+      propertyPath: SEAudio
+      value: 
+      objectReference: {fileID: 1557958746}
+    - target: {fileID: 4094011683184477041, guid: d536fa71dd00cf349a228e41212ace48, type: 3}
+      propertyPath: CallAudio
+      value: 
+      objectReference: {fileID: 1557958746}
     - target: {fileID: 4094011683184477041, guid: d536fa71dd00cf349a228e41212ace48, type: 3}
       propertyPath: SelectorItem
       value: 
@@ -3569,6 +3577,11 @@ AudioSource:
   m_CorrespondingSourceObject: {fileID: 1423013989060084227, guid: 4f5267607c5b64632bc55459681bb61f, type: 3}
   m_PrefabInstance: {fileID: 1557958741}
   m_PrefabAsset: {fileID: 0}
+--- !u!82 &1557958746 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 4171096161712314417, guid: 4f5267607c5b64632bc55459681bb61f, type: 3}
+  m_PrefabInstance: {fileID: 1557958741}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1597856745
 GameObject:
   m_ObjectHideFlags: 0
@@ -5068,17 +5081,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2076669765}
   m_CullTransparentMesh: 1
---- !u!114 &2085559947 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1626989357812656637, guid: d536fa71dd00cf349a228e41212ace48, type: 3}
-  m_PrefabInstance: {fileID: 147060251}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9bf9833a34d454de694d6c34603b0e09, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2101753432
 GameObject:
   m_ObjectHideFlags: 0

@@ -50,6 +50,7 @@ public class Q3QuizManager : MonoBehaviour
     public GameObject AnswerPanel;
     public GameObject HintPanel;
     public GameObject MoreInfoPanel;
+    public GameObject GameUICanvas;
 
     //Score
     int score = 0;
@@ -67,7 +68,8 @@ public class Q3QuizManager : MonoBehaviour
     public AudioSource bgm;
 
 
-    private void Awake() {
+    private void Awake()
+    {
         playerTicket = PlayerPrefs.GetInt("TicketNum");
 
 
@@ -79,17 +81,18 @@ public class Q3QuizManager : MonoBehaviour
         GamePanel.SetActive(false);
         MoreInfoPanel.SetActive(false);
 
-        if(PlayerPrefs.HasKey("Q3GamePlayCount"))
+        if (PlayerPrefs.HasKey("Q3GamePlayCount"))
         {
             PlayCount = PlayerPrefs.GetInt("Q3GamePlayCount");
-            tryNumText.text = (PlayCount+1).ToString() + "번째 시도";
+            tryNumText.text = (PlayCount + 1).ToString() + "번째 시도";
         }
-        else   {
+        else
+        {
 
             tryNumText.text = "1번째 시도";
             PlayCount = 0;
-            
-        } 
+
+        }
 
 
         //start panel 활성화
@@ -101,8 +104,9 @@ public class Q3QuizManager : MonoBehaviour
 
         //시도횟수 설정
     }
-    public void start() {
-        if(!PlayerPrefs.HasKey("Q3GamePlayCount"))
+    public void start()
+    {
+        if (!PlayerPrefs.HasKey("Q3GamePlayCount"))
         {
             PlayCount++;
             PlayerPrefs.SetInt("Q3GamePlayCount", PlayCount);
@@ -121,115 +125,133 @@ public class Q3QuizManager : MonoBehaviour
         GamePanel.SetActive(true);
         generateQuestion();
     }
-    void gameOver(){
+    void gameOver()
+    {
         bgm.Stop();
+        GameUICanvas.SetActive(false);
 
         GamePanel.SetActive(false);
-        
-        if(score >= pass){
+
+        if (score >= pass)
+        {
             Passbgm.Play();
             Pass.SetReult(PlayCount);
             Pass.SetScore(score);
             PassPanel.SetActive(true);
-            PlayerPrefs.SetString("Quest3PlayLog","GameClear");
+            PlayerPrefs.SetString("Quest3PlayLog", "GameClear");
         }
-        else{
+        else
+        {
             Failbgm.Play();
             Fail.SetScore(score);
             FailPanel.SetActive(true);
         }
-        
+
 
     }
 
-    public void retry(){
+    public void retry()
+    {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
 
 
 
-    public void correct(){
-        correectsound.Play();  
-        score +=1;
+    public void correct()
+    {
+        correectsound.Play();
+        score += 1;
         popUpSystem.popUp(true);
         QnA.RemoveAt(currentQuestion);
         //팝다운과 같이 다음 질문으로 이동하도록 한다.
-        Invoke("generateQuestion",2);
+        Invoke("generateQuestion", 2);
         //generateQuestion();
 
     }
-    public void wrong(){
+    public void wrong()
+    {
         wrongsound.Play();
         popUpSystem.popUp(false);
         Die();
-        
-        if(life > 0){
+
+        if (life > 0)
+        {
             //뭘 적어야할까요?
         }
-        else{
+        else
+        {
             QnA.RemoveAt(currentQuestion);
             //팝다운과 같이 다음 질문으로 이동하도록  한다.
-            Invoke("generateQuestion",2);
+            Invoke("generateQuestion", 2);
             //generateQuestion();
         }
 
     }
 
     public void generateQuestion()
-    {   
-        
-        if(QnA.Count > 0){
-        current += 1;
-        Current.text = current.ToString();
-        currentQuestion = Random.Range(0, QnA.Count);
-        QuestionTxt.text = QnA[currentQuestion].Question;
+    {
 
-        currentQuestionNum = QnA[currentQuestion].QuestionNum;
-        HintManager.GetComponent<Q3HintManager>().generateHint(currentQuestionNum);
-        Debug.Log(currentQuestionNum);
-        SetAnswer();
-        SetLife();
+        if (QnA.Count > 0)
+        {
+            current += 1;
+            Current.text = current.ToString();
+            currentQuestion = Random.Range(0, QnA.Count);
+            QuestionTxt.text = QnA[currentQuestion].Question;
+
+            currentQuestionNum = QnA[currentQuestion].QuestionNum;
+            HintManager.GetComponent<Q3HintManager>().generateHint(currentQuestionNum);
+            Debug.Log(currentQuestionNum);
+            SetAnswer();
+            SetLife();
 
 
 
         }
-        else{
+        else
+        {
             Debug.Log("Out of range of questions");
             gameOver();
-  
+
         }
 
-        
+
     }
-    void SetAnswer(){
-        for(int i=0;i<options.Length; i++){
+    void SetAnswer()
+    {
+        for (int i = 0; i < options.Length; i++)
+        {
             options[i].GetComponent<Q3Answers>().isCorrect = false;
             options[i].transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = QnA[currentQuestion].Answers[i];
 
-            if(QnA[currentQuestion].CorrectAnswer == i+1){
+            if (QnA[currentQuestion].CorrectAnswer == i + 1)
+            {
                 options[i].GetComponent<Q3Answers>().isCorrect = true;
             }
-       
+
         }
     }
 
 
-    void SetLife(){
+    void SetLife()
+    {
         life = 2;
-        Life1.color = new Color(1,1,1);
-        Life2.color = new Color(1,1,1);
+        Life1.color = new Color(1, 1, 1);
+        Life2.color = new Color(1, 1, 1);
 
     }
 
 
-    void Die(){
+    void Die()
+    {
         life -= 1;
-        if(life==1){
-            Life1.color = new Color(0,0,0);
+        if (life == 1)
+        {
+            Life1.color = new Color(0, 0, 0);
         }
-        if(life==0){
-            Life2.color = new Color(0,0,0);
+        if (life == 0)
+        {
+            Life2.color = new Color(0, 0, 0);
         }
 
     }

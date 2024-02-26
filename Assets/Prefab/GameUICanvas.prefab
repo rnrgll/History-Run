@@ -1405,6 +1405,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -215
       objectReference: {fileID: 0}
+    - target: {fileID: 5980689235825060709, guid: da8e0cea7a5894c27a2d7658d2fdc3c8, type: 3}
+      propertyPath: m_Color.a
+      value: 0.7490196
+      objectReference: {fileID: 0}
     - target: {fileID: 5980689235906006132, guid: da8e0cea7a5894c27a2d7658d2fdc3c8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
