@@ -727,6 +727,10 @@ PrefabInstance:
       value: Sound, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 4094011681938070629, guid: d536fa71dd00cf349a228e41212ace48, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4094011681938070629, guid: d536fa71dd00cf349a228e41212ace48, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
@@ -1579,7 +1583,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &241110136
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4336,7 +4340,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogManager: {fileID: 1722610566}
   ImgPanel: {fileID: 1070037488}
-  sound: {fileID: 7838235223052874663}
+  sound: {fileID: 2294136944632972500}
 --- !u!114 &2076480454
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -30,7 +30,7 @@ public class StageClearBtnEvent : MonoBehaviour
             Debug.Log("buttonClickSound is null");
         }
 
-        Invoke("DelayedSceneChange", 0.5f);
+        Invoke("DelayedSceneChange", 0.4f);
     }
 
     private void DelayedSceneChange()
