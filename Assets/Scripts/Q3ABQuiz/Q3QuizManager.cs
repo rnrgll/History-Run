@@ -35,10 +35,10 @@ public class Q3QuizManager : MonoBehaviour
     public GameObject HintManager;
 
 
-    //문제당 시도횟수
-    int life = 2;
-    public Image Life1;
-    public Image Life2;
+    // //문제당 시도횟수
+    // int life = 2;
+    // public Image Life1;
+    // public Image Life2;
 
 
     //Panel
@@ -173,19 +173,14 @@ public class Q3QuizManager : MonoBehaviour
     {
         wrongsound.Play();
         popUpSystem.popUp(false);
-        Die();
+        // Die();
 
-        if (life > 0)
-        {
-            //뭘 적어야할까요?
-        }
-        else
-        {
-            QnA.RemoveAt(currentQuestion);
-            //팝다운과 같이 다음 질문으로 이동하도록  한다.
-            Invoke("generateQuestion", 2);
-            //generateQuestion();
-        }
+
+        QnA.RemoveAt(currentQuestion);
+        //팝다운과 같이 다음 질문으로 이동하도록  한다.
+        Invoke("generateQuestion", 2);
+        //generateQuestion();
+
 
     }
 
@@ -203,7 +198,6 @@ public class Q3QuizManager : MonoBehaviour
             HintManager.GetComponent<Q3HintManager>().generateHint(currentQuestionNum);
             Debug.Log(currentQuestionNum);
             SetAnswer();
-            SetLife();
 
 
 
@@ -230,30 +224,6 @@ public class Q3QuizManager : MonoBehaviour
             }
 
         }
-    }
-
-
-    void SetLife()
-    {
-        life = 2;
-        Life1.color = new Color(1, 1, 1);
-        Life2.color = new Color(1, 1, 1);
-
-    }
-
-
-    void Die()
-    {
-        life -= 1;
-        if (life == 1)
-        {
-            Life1.color = new Color(0, 0, 0);
-        }
-        if (life == 0)
-        {
-            Life2.color = new Color(0, 0, 0);
-        }
-
     }
 
 }
