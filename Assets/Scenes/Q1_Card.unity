@@ -6486,7 +6486,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uBBF8\uC158 : \uCE74\uB4DC 5\uAC1C \uBAA8\uB450 \uB9DE\uCD94\uAE30"
+  m_text: "\uBBF8\uC158 : \uCE74\uB4DC 5\uAC1C \uBAA8\uB450 \uB9DE\uD788\uAE30"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 34c73362816b340f1a223135fa4bc72d, type: 2}
   m_sharedMaterial: {fileID: -3934288067983314963, guid: 34c73362816b340f1a223135fa4bc72d, type: 2}
@@ -8204,7 +8204,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uCE74\uB4DC \uB9DE\uCD94\uAE30"
+  m_text: "\uCE74\uB4DC \uB9DE\uD788\uAE30"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 34c73362816b340f1a223135fa4bc72d, type: 2}
   m_sharedMaterial: {fileID: -3934288067983314963, guid: 34c73362816b340f1a223135fa4bc72d, type: 2}
@@ -12269,7 +12269,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -7089507018876171541, guid: 20536efa34db4453889b48d50f5cbf13, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 5faaa1653dcab4b4b86bcd30a707c959, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 676fcda5a0b4c491dbff4c3d9136d6ee, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1

@@ -8280,15 +8280,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6805156993146446681, guid: 83102679ef3ba4a389b9a189e288f281, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6805156993146446681, guid: 83102679ef3ba4a389b9a189e288f281, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6805156993146446681, guid: 83102679ef3ba4a389b9a189e288f281, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6805156993146446681, guid: 83102679ef3ba4a389b9a189e288f281, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -10021,7 +10021,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -7089507018876171541, guid: 20536efa34db4453889b48d50f5cbf13, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 4aa77aee7760c439084f31ed7857f88a, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 2984b51f461cf4be3bb0bbca24728b8b, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.751
   m_Pitch: 1

@@ -29,6 +29,10 @@ public class BattleGameManager : MonoBehaviour
     {
         PassPanel.SetActive(false);
         FailPanel.SetActive(false);
+        if (bg.bgm.mute)
+        {
+            bg.bgm.mute = false;
+        }
 
     }
     private void Update()

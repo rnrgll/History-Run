@@ -537,7 +537,7 @@ PrefabInstance:
     - target: {fileID: 4518277811550221934, guid: 0152d7f5cae1d4d9796ad100d5359fc3, type: 3}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: 10c4e0465231e4c7a92c0a4fd95883f7, type: 3}
+      objectReference: {fileID: 8300000, guid: 6ba06795236ff4f2cae2b5170dc19183, type: 3}
     - target: {fileID: 4518277811550221934, guid: 0152d7f5cae1d4d9796ad100d5359fc3, type: 3}
       propertyPath: m_PlayOnAwake
       value: 1
@@ -937,7 +937,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uBBF8\uC158 : 3\uBB38\uC81C \uC774\uC0C1 \uB9DE\uCD94\uAE30"
+  m_text: "\uBBF8\uC158 : 3\uBB38\uC81C \uC774\uC0C1 \uB9DE\uD788\uAE30"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 34c73362816b340f1a223135fa4bc72d, type: 2}
   m_sharedMaterial: {fileID: -3934288067983314963, guid: 34c73362816b340f1a223135fa4bc72d, type: 2}
@@ -4497,8 +4497,6 @@ MonoBehaviour:
   Current: {fileID: 336365722}
   Total: {fileID: 291104721}
   HintManager: {fileID: 273854947}
-  Life1: {fileID: 0}
-  Life2: {fileID: 0}
   StartPanel: {fileID: 1851170319}
   GamePanel: {fileID: 925549891}
   FailPanel: {fileID: 1863522874}
@@ -6813,7 +6811,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uAC1D\uAD00\uC2DD \uD034\uC988"
+  m_text: "\uC120\uD0DD\uD615 \uD034\uC988"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 34c73362816b340f1a223135fa4bc72d, type: 2}
   m_sharedMaterial: {fileID: -3934288067983314963, guid: 34c73362816b340f1a223135fa4bc72d, type: 2}

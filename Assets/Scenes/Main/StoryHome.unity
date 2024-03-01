@@ -1361,8 +1361,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 636372373}
   m_HandleRect: {fileID: 636372372}
   m_Direction: 2
-  m_Value: 0
-  m_Size: 0.8719273
+  m_Value: 1
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1460,6 +1460,10 @@ PrefabInstance:
       propertyPath: Loop
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4518277811550221934, guid: 0152d7f5cae1d4d9796ad100d5359fc3, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: b715f181efda8442c99c26d97c691adb, type: 3}
     - target: {fileID: 5053951642791659402, guid: 0152d7f5cae1d4d9796ad100d5359fc3, type: 3}
       propertyPath: m_Name
       value: MainBGMSystem
@@ -2699,7 +2703,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.000030517578}
+  m_AnchoredPosition: {x: 0, y: -0.000091552734}
   m_SizeDelta: {x: 0, y: 300}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1636174793

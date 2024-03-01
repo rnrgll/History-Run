@@ -52,7 +52,7 @@ public class ARR_GameManager : MonoBehaviour
     {
         // 게임 시작 전 대기 시간
         Debug.Log("기다리기 시작");
-        yield return new WaitForSeconds(0.55f);
+        yield return new WaitForSeconds(0.45f);
         Debug.Log("기다리기끝");
         arrowGenerator.IsGameStarted = true; // 게임 시작 플래그를 활성화
     }

@@ -34,10 +34,15 @@ public class BackgroundPlay2 : MonoBehaviour
     private void Start()
     {
         if (!bgm.isPlaying)
+        {
+            Debug.Log("플레이");
             bgm.Play();
+        }
         else
-            bgm.Stop();
+        {
 
+            bgm.Stop();
+        }
     }
     private void Update()
     {
