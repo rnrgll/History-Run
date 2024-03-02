@@ -325,12 +325,30 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5988586015669858370, guid: c248c4422de84465fa839a8cdbcdcf9d, type: 3}
   m_PrefabInstance: {fileID: 160515508}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 168329231}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1a664855a7a6140b19895c4b91b45538, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &168329231 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5988586015669858383, guid: c248c4422de84465fa839a8cdbcdcf9d, type: 3}
+  m_PrefabInstance: {fileID: 160515508}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &168329233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 168329231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 212b10a7bb06340e4ae02ef6b687e15d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  backgroundPlay2: {fileID: 1362078074}
 --- !u!1 &192540711
 GameObject:
   m_ObjectHideFlags: 0
@@ -1898,6 +1916,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lowEnergybgm: {fileID: 1362078071}
+--- !u!114 &1362078074 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 65392896, guid: 76364c01ac72843e3bb70c64d486ebfe, type: 3}
+  m_PrefabInstance: {fileID: 1362078069}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1362078070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b2c2368354194791bf515de176c3bce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1371245761
 GameObject:
   m_ObjectHideFlags: 0

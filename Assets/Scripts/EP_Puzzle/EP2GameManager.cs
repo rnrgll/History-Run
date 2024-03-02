@@ -12,6 +12,8 @@ public class EP2GameManager : MonoBehaviour
     public GameObject PassPanel;
     public GameObject HintPanel;
 
+    public AudioSource audioSource_bgm;
+
     private void Awake()
     {
 
@@ -28,8 +30,13 @@ public class EP2GameManager : MonoBehaviour
         //start panel 활성화
         StartPanel.SetActive(true);
     }
+    private void Start()
+    {
+        audioSource_bgm.Play();
+    }
     public void start()
     {
+
 
         //game panel 활성화
         StartPanel.SetActive(false);

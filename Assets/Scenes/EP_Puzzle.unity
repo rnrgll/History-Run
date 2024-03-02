@@ -2084,6 +2084,7 @@ MonoBehaviour:
   GamePanel: {fileID: 3356187615690752499}
   PassPanel: {fileID: 1291279270}
   HintPanel: {fileID: 1369578354}
+  audioSource_bgm: {fileID: 618405206014194725}
 --- !u!4 &598860700
 Transform:
   m_ObjectHideFlags: 0

@@ -2792,6 +2792,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 76364c01ac72843e3bb70c64d486ebfe, type: 3}
+--- !u!114 &1163540350 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 65392896, guid: 76364c01ac72843e3bb70c64d486ebfe, type: 3}
+  m_PrefabInstance: {fileID: 1163540349}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1873507011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b2c2368354194791bf515de176c3bce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1186446263
 GameObject:
   m_ObjectHideFlags: 0
@@ -4224,6 +4235,7 @@ GameObject:
   - component: {fileID: 1188212776759185385}
   - component: {fileID: 1188212776759185390}
   - component: {fileID: 1188212776759185391}
+  - component: {fileID: 1188212776759185392}
   m_Layer: 5
   m_Name: Close
   m_TagString: Untagged
@@ -4313,6 +4325,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameObject: {fileID: 1188212777015102026}
   UnitsToMove: -10
+--- !u!114 &1188212776759185392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1188212776759185389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6b532f2a0f1745c18f082e64719e982, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!222 &1188212776989778053
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5381,6 +5405,7 @@ GameObject:
   - component: {fileID: 8428964386746527458}
   - component: {fileID: 8428964386746527459}
   - component: {fileID: 8428964386746527460}
+  - component: {fileID: 8428964386746527463}
   m_Layer: 5
   m_Name: Exit
   m_TagString: Untagged
@@ -5388,6 +5413,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &8428964386746527463
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8428964386746527462}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6b532f2a0f1745c18f082e64719e982, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!222 &8428964387920072775
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5774,6 +5811,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1163540350}
+        m_TargetAssemblyTypeName: BackgroundPlay2, Assembly-CSharp
+        m_MethodName: DestoryObjet
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1609143076}
         m_TargetAssemblyTypeName: SceneChange, Assembly-CSharp
         m_MethodName: EP_Battle
@@ -5834,6 +5883,7 @@ GameObject:
   - component: {fileID: 8428964388620566315}
   - component: {fileID: 8428964388620566316}
   - component: {fileID: 8428964388620566317}
+  - component: {fileID: 8428964388620566320}
   m_Layer: 5
   m_Name: Retry
   m_TagString: Untagged
@@ -5841,6 +5891,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &8428964388620566320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8428964388620566319}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6b532f2a0f1745c18f082e64719e982, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8428964388637533016
 GameObject:
   m_ObjectHideFlags: 0

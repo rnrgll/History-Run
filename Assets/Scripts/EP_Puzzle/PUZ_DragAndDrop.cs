@@ -23,7 +23,7 @@ public class PUZ_DragAndDrop : MonoBehaviour
     void Start()
     {
         correctPieces = 0;
-        audioSource_bgm.Play();
+
     }
 
     public void puzzlePlaced()
