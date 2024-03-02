@@ -10,7 +10,7 @@ public class SenarioInfoManager : MonoBehaviour
     public GameObject InfoPanel;
     [Header("Information Text")]
     [SerializeField]
-    [TextArea] 
+    [TextArea]
     string SenarioInformation;
     [SerializeField]
     string UnlockRewardTxt;
@@ -24,69 +24,95 @@ public class SenarioInfoManager : MonoBehaviour
     [SerializeField]
     bool hasItemReward;
     [SerializeField]
+    bool hasTicketReward;
+    [SerializeField]
     bool hasPlace;
-    
+
+
+
     [Header("Game Objects")]
     public TextMeshProUGUI SenarioTitle;
     public TextMeshProUGUI SenarioInfo;
     public GameObject RewardSection;
     public GameObject UnlockSlot;
     public GameObject ItemSlot;
+    public GameObject TicketSlot;
     public GameObject PlaceSection;
     public TextMeshProUGUI PlaceTMP;
 
     static string SlotName;
 
 
-    public void Click() {
+    public void Click()
+    {
 
         TitleSetting();
         InfoSetting();
         RewardSetting();
         PlaceSetting();
         InfoPanel.SetActive(true);
-        PlayerPrefs.SetString("SelectSlot",this.gameObject.name);
+        PlayerPrefs.SetString("SelectSlot", this.gameObject.name);
     }
 
-    void TitleSetting(){
+    void TitleSetting()
+    {
         SenarioTitle.text = gameObject.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text;
     }
-    void InfoSetting(){
+    void InfoSetting()
+    {
         SenarioInfo.text = SenarioInformation;
-        
+
     }
-    void RewardSetting(){
-        if(hasUnlockReward||hasItemReward){
+    void RewardSetting()
+    {
+        if (hasUnlockReward || hasItemReward || hasTicketReward)
+        {
             RewardSection.SetActive(true);
-            if(hasUnlockReward){
-            UnlockSlot.SetActive(true);
-            UnlockSlot.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = UnlockRewardTxt;
+            if (hasUnlockReward)
+            {
+                UnlockSlot.SetActive(true);
+                UnlockSlot.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = UnlockRewardTxt;
             }
-            else{
+            else
+            {
                 UnlockSlot.SetActive(false);
             }
 
-            if(hasItemReward){
+            if (hasItemReward)
+            {
                 ItemSlot.SetActive(true);
                 ItemSlot.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = ItemRewardTxt;
 
             }
-            else{
+            else
+            {
                 ItemSlot.SetActive(false);
             }
+            if (hasTicketReward)
+            {
+                TicketSlot.SetActive(true);
+            }
+            else
+            {
+                UnlockSlot.SetActive(false);
+            }
+
 
         }
         else
             RewardSection.SetActive(false);
 
-        
+
     }
-    void PlaceSetting(){
-        if(hasPlace){
+    void PlaceSetting()
+    {
+        if (hasPlace)
+        {
             PlaceSection.SetActive(true);
             PlaceTMP.text = PlaceNameTxt;
         }
-        else{
+        else
+        {
             PlaceSection.SetActive(false);
         }
     }
