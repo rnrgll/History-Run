@@ -101,7 +101,7 @@ public class SenarioInfoManager : MonoBehaviour
             }
             else
             {
-                UnlockSlot.SetActive(false);
+                TicketSlot.SetActive(false);
             }
 
 
