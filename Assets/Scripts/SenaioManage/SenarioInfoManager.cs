@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 using System;
 
@@ -51,6 +52,12 @@ public class SenarioInfoManager : MonoBehaviour
         RewardSetting();
         PlaceSetting();
         InfoPanel.SetActive(true);
+        InfoPanel.transform.GetChild(0).GetComponent<VerticalLayoutGroup>().enabled = false;
+        InfoPanel.transform.GetChild(0).GetComponent<VerticalLayoutGroup>().enabled = true;
+
+        // InfoPanel.transform.GetChild(0).GetComponent<ContentSizeFitter>().verticalFit = ContentSizeFitter.FitMode.MinSize;
+        LayoutRebuilder.ForceRebuildLayoutImmediate(InfoPanel.transform.GetChild(0).GetComponent<RectTransform>());
+
         PlayerPrefs.SetString("SelectSlot", this.gameObject.name);
     }
 

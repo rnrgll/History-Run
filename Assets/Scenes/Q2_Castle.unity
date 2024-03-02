@@ -4661,6 +4661,7 @@ MonoBehaviour:
   PlayCount: 0
   tryNumText: {fileID: 1679255409}
   score: 0
+  wrongAnswer: 0
   deck:
   - {fileID: 455205179}
   - {fileID: 1799352735}
@@ -12126,7 +12127,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -7089507018876171541, guid: 20536efa34db4453889b48d50f5cbf13, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 4abb96f14dbd34cfd9e6afea03ffb42f, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 49d09067693734eef999b6bd0b9d9c39, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1

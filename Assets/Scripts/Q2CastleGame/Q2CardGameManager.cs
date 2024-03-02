@@ -13,6 +13,7 @@ public class Q2CardGameManager : MonoBehaviour
 
     //점수
     public int score = 0;
+    public int wrongAnswer = 0;
 
     //CardDeck
     public List<Q2Card> deck = new List<Q2Card>();
@@ -135,17 +136,27 @@ public class Q2CardGameManager : MonoBehaviour
 
     public void GameOver()
     {
+
+
+        //00000
         bgm.Stop();
         GameUICanvas.SetActive(false);
 
         GamePanel.SetActive(false);
         for (int i = 0; i < AnswerSlots.Length; i++)
         {
-            if (AnswerSlots[i] && AnswerSlots[i] == SelectSlots[i])
+            if (AnswerSlots[i] == SelectSlots[i])
             {
-                score++;
-            }
+                if (AnswerSlots[i])
+                {
+                    score++;
+                }
 
+            }
+            else
+            {
+                wrongAnswer++;
+            }
         }
 
         //카드 비활성화
@@ -156,22 +167,32 @@ public class Q2CardGameManager : MonoBehaviour
 
 
 
-        if (score == 3)
+        if (score == 3 && wrongAnswer == 0)
         {
-            Passbgm.Play();
-            Pass.setResult(PlayCount);
-            Pass.setScore(score);
-            PassPanel.SetActive(true);
-            PlayerPrefs.SetString("Quest2PlayLog", "GameClear");
+            GameSuccess();
         }
         else
         {
-            Failbgm.Play();
-            Fail.setScore(score);
-            FailPanel.SetActive(true);
+            GameFail();
         }
     }
 
+
+
+    void GameSuccess()
+    {
+        Passbgm.Play();
+        Pass.setResult(PlayCount);
+        Pass.setScore(score);
+        PassPanel.SetActive(true);
+        PlayerPrefs.SetString("Quest2PlayLog", "GameClear");
+    }
+    void GameFail()
+    {
+        Failbgm.Play();
+        Fail.setScore(score);
+        FailPanel.SetActive(true);
+    }
 
 
 

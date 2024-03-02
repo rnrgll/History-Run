@@ -167,16 +167,16 @@ public class Prologue1 : MonoBehaviour
 
         Debug.Log("4-5");
         dialogTexts4.Add(new DialogData("/emote:Shock//color:#FF5B00//size:up/" + playerName + "/color:black/\n/size:init/" + "그렇군요... 이해는 되지만 그럼 지금처럼 칠지도가 사라진 위험한 상황에서는 아무것도 할 수 없는 것 아니에요?", "User"));
-        dialogTexts4.Add(new DialogData("/color:#FF5B00//size:up/" + playerName + "/color:black/\n/size:init/" + "아무리 그래도 한곳에 힘을 모으는 것은 너무 무모한 선택이었어요! ", "User"));
+        dialogTexts4.Add(new DialogData("/emote:Think//color:#FF5B00//size:up/" + playerName + "/color:black/\n/size:init/" + "아무리 그래도 한곳에 힘을 모으는 것은 너무 무모한 선택이었어요! ", "User"));
 
-        dialogTexts4.Add(new DialogData("/color:#1F8A58//size:up/" + King_Geunchogo + "/color:black/\n/size:init/" + "크흠, 솔직히 말하자면... 이유가 꼭 그것만은 아니긴 해", "King_Geunchogo"));
+        dialogTexts4.Add(new DialogData("/emote:Embrass//color:#1F8A58//size:up/" + King_Geunchogo + "/color:black/\n/size:init/" + "크흠, 솔직히 말하자면... 이유가 꼭 그것만은 아니긴 해", "King_Geunchogo"));
         dialogTexts4.Add(new DialogData("/color:#1F8A58//size:up/" + King_Geunchogo + "/color:black/\n/size:init/" + "사실 모든 역사적 위인들이 사이가 좋지 않거든. 우리끼리만 해도 삼국 간의 위인들은 그다지 사이가 좋지 않으니깐... ", "King_Geunchogo"));
         dialogTexts4.Add(new DialogData("/color:#1F8A58//size:up/" + King_Geunchogo + "/color:black/\n/size:init/" + "지난번에는 /color:#1F8A58/통수의 달인/color:black/(신라 진흥왕, 백제와 연합하여 한강 유역을 나누어 수복했지만 백제를 급습하여 다시 한강 유역을 모두 차지했다)과", "King_Geunchogo"));
         dialogTexts4.Add(new DialogData("/color:#1F8A58//size:up/" + King_Geunchogo + "/color:black/\n/size:init/" + "/color:#1F8A58/칠전팔기 야심가/color:black/(성왕, 백제 수도 천도 후 백제 중흥을 위해 지속적으로 노력했지만 진흥왕과의 전투에서 피살당하고 한강 유역을 빼앗김)가 만났다가 또 싸움이 날뻔한 것만 생각해도... 어휴...말도말게.", "King_Geunchogo"));
 
 
         Debug.Log("4-6");
-        dialogTexts4.Add(new DialogData("/color:#FF5B00//size:up/" + playerName + "/color:black/\n/size:init/" + "(뭐야 결국 자신들 자존심 싸움 때문에 그랬다는 거잖아. 삼국 통일을 위해 치열하게 경쟁한 나라의 위인을 답네...)", "User"));
+        dialogTexts4.Add(new DialogData("/emote:What//color:#FF5B00//size:up/" + playerName + "/color:black/\n/size:init/" + "(뭐야 결국 자신들 자존심 싸움 때문에 그랬다는 거잖아. 삼국 통일을 위해 치열하게 경쟁한 나라의 위인을 답네...)", "User"));
 
         dialogTexts4.Add(new DialogData("/emote:Restless//color:#1F8A58//size:up/" + King_Geunchogo + "/color:black/\n/size:init/" + "아, 암튼 중요한건 그게 아닐세.", "King_Geunchogo"));
         dialogTexts4.Add(new DialogData("/emote:Restless//color:#1F8A58//size:up/" + King_Geunchogo + "/color:black/\n/size:init/" + "칠지도에는 아무나 그 힘을 사용할 수 없도록 봉인이 걸려 있는데 그 힘에 대한 봉인을 풀게 된다면 현실 세계에서 힘이 사용될 수 있는 강력한 무기가 돼.", "King_Geunchogo"));

@@ -13,6 +13,7 @@ public class Q1CardGameManager : MonoBehaviour
 
     //점수
     public int score = 0;
+    public int wrongAnswer = 0;
 
     //CardDeck
     public List<Q1Card> deck = new List<Q1Card>();
@@ -142,9 +143,17 @@ public class Q1CardGameManager : MonoBehaviour
         GamePanel.SetActive(false);
         for (int i = 0; i < AnswerSlots.Length; i++)
         {
-            if (AnswerSlots[i] && AnswerSlots[i] == SelectSlots[i])
+            if (AnswerSlots[i] == SelectSlots[i])
             {
-                score++;
+                if (AnswerSlots[i])
+                {
+                    score++;
+                }
+
+            }
+            else
+            {
+                wrongAnswer++;
             }
 
         }
@@ -157,20 +166,29 @@ public class Q1CardGameManager : MonoBehaviour
 
 
 
-        if (score == 5)
+        if (score == 5 && wrongAnswer == 0)
         {
-            Passbgm.Play();
-            Pass.setResult(PlayCount);
-            Pass.setScore(score);
-            PassPanel.SetActive(true);
-            PlayerPrefs.SetString("Quest1PlayLog", "GameClear");
+            GameSuccess();
         }
         else
         {
-            Failbgm.Play();
-            Fail.setScore(score);
-            FailPanel.SetActive(true);
+            GameFail();
         }
+    }
+
+    void GameSuccess()
+    {
+        Passbgm.Play();
+        Pass.setResult(PlayCount);
+        Pass.setScore(score);
+        PassPanel.SetActive(true);
+        PlayerPrefs.SetString("Quest1PlayLog", "GameClear");
+    }
+    void GameFail()
+    {
+        Failbgm.Play();
+        Fail.setScore(score);
+        FailPanel.SetActive(true);
     }
 
 
