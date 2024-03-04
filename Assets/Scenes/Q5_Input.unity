@@ -1289,7 +1289,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Q5Hints:
   - Hint: "\uC9C0\uBA74\uC744 \uAE4A\uAC8C \uD30C\uACE0 \n\uC790\uAC08 \uB530\uC704\uC758
-      \uC11D\uC7AC\uB85C\n\uB367\uB110\uC744 \uB9CC\uB4E0 \uBB34\uB365\uC774\uB2E4."
+      \uC11D\uC7AC\uB85C\n\uB367\uB110\uC744 \uB9CC\uB4E0 \uBB34\uB364\uC774\uB2E4."
   - Hint: "\uAD74\uC2DD\uB3CC\uBC29\uBB34\uB364\uC740 \n\uC0AC\uB78C\uC774 \uB4DC\uB098\uB4E4
       \uC218 \uC788\uB294 \n\uBB38\uC774 \uAC16\uCD94\uC5B4\uC838 \uC788\uB2E4."
   - Hint: "\uC81C1\uD638\uBD84, \uC81C2\uD638\uBD84, \uC81C3\uD638\uBD84,\n\uC81C6\uD638\uBD84\uC740
@@ -4769,7 +4769,7 @@ MonoBehaviour:
   HintPanel: {fileID: 293018975}
   MoreInfoPanel: {fileID: 922062047}
   GameUICanvas: {fileID: 1517451497}
-  pass: 3
+  pass: 2
   currentQuestionNum: 0
   correectsound: {fileID: 236946448817321260}
   wrongsound: {fileID: 7665059515801854383}

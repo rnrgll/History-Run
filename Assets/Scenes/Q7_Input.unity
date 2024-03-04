@@ -4676,7 +4676,7 @@ MonoBehaviour:
   HintPanel: {fileID: 1405030595}
   MoreInfoPanel: {fileID: 770833610}
   GameUICanvas: {fileID: 724173174}
-  pass: 3
+  pass: 2
   currentQuestionNum: 0
   correectsound: {fileID: 2294136944000300845}
   wrongsound: {fileID: 7838235223317495902}
