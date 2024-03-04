@@ -143,7 +143,7 @@ public class Epilogue : MonoBehaviour
         //#３. 채팅 화면: 독백
         dialogTexts2.Add(new DialogData("/color:#FF5B00//size:up/" + playerName + "/color:black/\n/size:init/" + "휴, 다행이다. 불화살을 모두 피했어", "User"));
         dialogTexts2.Add(new DialogData("/emote:Think//color:#FF5B00//size:up/" + playerName + "/color:black/\n/size:init/" + "이거 진짜 쉽지 않겠는걸? 설마 다음에 또 함정이 있는 거 아니겠지? ", "User"));
-        dialogTexts2.Add(new DialogData("/emote:None//sound:FootSound/(동굴 안쪽으로 더 들어가보자)/wait:4/", "User", null, false));
+        dialogTexts2.Add(new DialogData("/emote:None//sound:FootSound/(동굴 안쪽으로 더 들어가보자)/wait:5.5/", "User", null, false));
 
         dialogTexts2.Add(new DialogData("/emote:Think//color:#FF5B00//size:up/" + playerName + "/color:black/\n/size:init/" + "오? 이 문이랑 조각들은 뭐지? 문에 조각들을 맞춰야 하는 건가?", "User"));
         dialogTexts2.Add(new DialogData("/emote:None//sound:Kung/(덜커덕 쿵!)", "User", () => Show_Images(2), false));
@@ -250,7 +250,7 @@ public class Epilogue : MonoBehaviour
 
 
         //#12. 채팅 화면: 독백
-        dialogTexts9.Add(new DialogData("/wait:1/(사건 해결 며칠 후, 뉴스)", "None"));
+        dialogTexts9.Add(new DialogData("/wait:0.5/(사건 해결 며칠 후, 뉴스)", "None"));
         dialogTexts9.Add(new DialogData("/sound:News//color:#1F8A58//size:up/" + Anchor + "/color:black/\n/size:init/" + "다음 소식입니다. 한동안 미궁으로 빠졌던 칠지도를 되찾았다는 소식입니다.", "Anchor"));
         dialogTexts9.Add(new DialogData("/color:#1F8A58//size:up/" + Anchor + "/color:black/\n/size:init/" + "FBI와 세계 최고 탐정들도 해결하지 못했던 사건을 초보 탐정 /color:#FF5B00/" + playerName + "/color:black/이 해결했다는 소식이 큰 화제를 모으고 있습니다...", "Anchor"));
         dialogTexts9.Add(new DialogData("/emote:Happy//sound:Smile//color:#FF5B00//size:up/" + playerName + "/color:black/\n/size:init/" + "후훗, 사건도 해결하고 유명세도 타다니. 정말 최고야! ", "User"));

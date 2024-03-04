@@ -50,11 +50,6 @@ public class Quest7 : MonoBehaviour
     List<DialogData> dialogTexts3 = new List<DialogData>();
     List<DialogData> dialogTexts4 = new List<DialogData>();
 
-    public AudioSource BGM;
-    public AudioSource currentplay;
-
-
-
     //int falseCount = 0; //오답 선택지 카운터
 
 
@@ -167,7 +162,7 @@ public class Quest7 : MonoBehaviour
 
         dialogTexts4.Add(new DialogData("/emote:Normal//color:#1F8A58//size:up/" + Garo + "/color:black/\n/size:init/" + "이건 내 작은 선물이네. 소소한 도움이 됐으면 좋겠군.", "Garo", () => Show_Images(2)));
         dialogTexts4.Add(new DialogData("부싯돌", "None", () => Show_Images(3)));
-        dialogTexts4.Add(new DialogData("/emote:None//sound:Phone/채팅종료", "User"));
+        dialogTexts4.Add(new DialogData("/emote:None//wait:1//sound:Phone/채팅종료", "User"));
         dialogTexts4.Add(new DialogData("/emote:Happy//color:#FF5B00//size:up/" + playerName + "/color:black/\n/size:init/" + "좋아... 그럼 차원의 문으로 들어가보자!", "User", () => Show_Images(4)));
         dialogTexts4.Add(new DialogData("입장", "None", () => End()));
 
